@@ -1,0 +1,34 @@
+.videoContainer {
+}
+
+.videoContainer iframe {
+	border: 0;
+	margin: auto;
+}
+
+/* ⚡ Mobile full-screen top-to-bottom */
+@media (600px >= width) {
+    .videoContainer{
+        /* use this to make full width  on mobile*/
+       /*  margin-left: -1rem;
+        margin-right: -1rem; */
+        
+    }
+    .videoContainer iframe {
+        height: 60vh;
+        
+    }
+}
+
+
+@media (600px <= width) {
+	.videoContainer {
+    }
+
+    .videoContainer iframe {
+        height: 60vh;
+        
+       
+    }
+
+}

@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+/* 2. Remove default margin 
+ {
+  margin: 0;
+} */
+
+:root {
+	--primary-color: #3498db;
+	--secondary-color: #2ecc71;
+	--text-color: #333;
+	--spacing: 20px;
+	--border-radius: 8px;
+	--font-base: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+	--font-small-text: clamp(0.75rem, 0.68rem + 0.3vw, 0.85rem);
+	--navHeight: 66px;
+	--navSvg: 40px;
+}
+
+
+body {
+	font-size: var(--font-base);
+	letter-spacing: -0.01em;
+	line-height: 1.5;
+	background-color: rgb(234, 233, 230);
+	color: var(--text-color);
+	-webkit-font-smoothing: antialiased;
+}
+
+.bodyOverlay {
+	overflow: hidden;
+}
+
+img,
+picture,
+video,
+canvas,
+iframe,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+
+h1,
+h2,
+h3 {
+	line-height: 1.2;
+	letter-spacing: -0.015em;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+h6 { font-size: clamp(0.875rem, 0.81rem + 0.35vw, 1rem);}
+
+h5 { font-size: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);}
+
+h4 { font-size: clamp(1.25rem, 1.15rem + 0.6vw, 1.5rem);}
+
+h3 { font-size: clamp(1.5rem, 1.35rem + 0.8vw, 1.875rem); }
+
+h2 { font-size: clamp(2rem, 1.8rem + 1vw, 2.5rem); }
+
+h1 { font-size: clamp(2.5rem, 2.25rem + 1.2vw, 3rem); }
+
+
+
+/* anthing below 600px */
+@media (max-width: 600px) {
+	.main-body {
+		padding: 0 1rem;
+	}
+}
+
+/* Tablets and small laptops (769px - 1024px) */
+@media (min-width: 769px) {
+	.main-body {
+		max-width: 90%;
+		margin: 0 auto;
+	}
+}
+
+/* Large desktops and high-resolution screens (1025px and up) */
+@media (min-width: 1025px) {
+	body {
+	}
+	.main-body {
+		max-width: 80%;
+	}
+}
+
+/* large screens (1440px and up) */
+@media (min-width: 1400px) {
+	.main-body {
+		max-width: 70%;
+	}
+}
+
+@media (min-width: 2000px) {
+	/* Extra-Large screens */
+	.main-body {
+		max-width: 2560px;
+	}
+}
+

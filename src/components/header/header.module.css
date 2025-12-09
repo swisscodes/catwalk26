@@ -1,0 +1,79 @@
+.navWrap {
+	position: relative;
+	height: var(--navHeight);
+}
+
+.navbarHeader {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: var(--navHeight);
+	background: var(--primary-color);
+	/* backdrop-filter: blur(8px); */
+	padding: 0 16px;
+
+	/* animation */
+	transition: transform 0.38s cubic-bezier(0.25, 0.1, 0.25, 1),
+		opacity 0.28s ease;
+
+	&.navHidden {
+		transform: translateY(-100%);
+	}
+
+	.navBar {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 'left right';
+		grid-auto-columns: 1fr 1fr;
+		padding: 0px 16px;
+		height: 100%;
+		align-content: center;
+
+		.burgerWrap {
+			grid-area: left;
+		}
+
+		.svgEl {
+			grid-area: right;
+			align-self: center;
+		
+			svg {
+				height: var(--navSvg);
+			}
+		}
+	}
+}
+
+
+
+.navShadow {
+	margin-top: var(--navHeight);
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	inset: 0;
+	z-index: 998;
+	overflow: hidden;
+}
+
+@media (width >= 600px) {
+	.navbarHeader {
+		.navBar {
+			grid-template-areas: 'right left';
+
+			.svgEl {
+				margin-left: 10%;
+			}
+		}
+	}
+}
+
+@media (width > 2400px) {
+	.navbarHeader {
+		.navBar {
+
+			.svgEl {
+				margin-inline: 20%;
+			}
+		}
+	}
+}
