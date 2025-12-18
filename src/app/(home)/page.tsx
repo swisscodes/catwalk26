@@ -7,9 +7,7 @@ export default function Home() {
 	return (
 		<div className={styles.homeWrap}>
 			<main className={styles.main}>
-				<aside className={styles.asideCon}>
-					<SideBar/>
-				</aside>
+				
 				<h1>hi</h1>
 				<h2>hi</h2>
 				<h3>hi</h3>
@@ -21,6 +19,22 @@ export default function Home() {
 				<h3>hi</h3>
 				<h1>hi</h1>
 				<h2>hi</h2>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
+				<h3>hi</h3>
 				<h3>hi</h3>
 			</main>
 		</div>

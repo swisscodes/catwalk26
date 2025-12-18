@@ -5,6 +5,7 @@
 	margin: 0;
 }
 
+
 /* 3. Enable keyword animations */
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -19,14 +20,23 @@
 
 :root {
 	--primary-color: #3498db;
-	--secondary-color: #2ecc71;
+	--secondary-color: #9d1865;
 	--text-color: #333;
+	--text-color-secondary: #e8e8e8;
 	--spacing: 20px;
 	--border-radius: 8px;
 	--font-base: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
 	--font-small-text: clamp(0.75rem, 0.68rem + 0.3vw, 0.85rem);
 	--navHeight: 66px;
 	--navSvg: 40px;
+	--layout-max-width: 2560px;
+}
+
+html {
+	/* This ensures smooth scrolling when clicking anchor links */
+  	scroll-behavior: smooth;
+	/* This prevents the fixed header from covering the section title */
+  	scroll-padding-top: var(--navHeight); 
 }
 
 
@@ -90,10 +100,28 @@ h2 { font-size: clamp(2rem, 1.8rem + 1vw, 2.5rem); }
 
 h1 { font-size: clamp(2.5rem, 2.25rem + 1.2vw, 3rem); }
 
+ul, li {
+	list-style-type: none;
+	margin-block-end: 0;
+	margin-block-start: 0;
+	padding-inline-start: 0px;
+}
 
+a {
+	text-decoration: none;
+  
+}
 
-/* anthing below 600px */
-@media (max-width: 600px) {
+a, a:visited {
+	color: var(--text-color-secondary);
+}
+
+.asideCon {
+	position: relative;
+}
+
+/* anthing below 769px */
+@media (max-width: 769px) {
 	.main-body {
 		padding: 0 1rem;
 	}
@@ -123,10 +151,22 @@ h1 { font-size: clamp(2.5rem, 2.25rem + 1.2vw, 3rem); }
 	}
 }
 
-@media (min-width: 2000px) {
+@media (2560px < width) {
 	/* Extra-Large screens */
 	.main-body {
-		max-width: 2560px;
+		max-width: var(--layout-max-width);
 	}
 }
 
+/* Utility Classes */
+.donateBtnWrap {
+
+	button {
+		padding: 8px 16px;
+		background-color: var(--secondary-color);
+		border: none;
+		color: var(--text-color-secondary);
+		border-radius: 5px;
+		cursor: pointer;
+	}
+}

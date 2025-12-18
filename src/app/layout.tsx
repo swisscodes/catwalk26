@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from 'src/components/header/Header';
 import NavProvider from 'src/context/Navcontext';
+import SideBar from 'src/components/mobileSideBar/SideBar';
 
 
 export const metadata: Metadata = {
@@ -13,12 +14,12 @@ export const metadata: Metadata = {
 const InterFont = localFont({
 	src: [
 		{
-			path: '../../../public/assets/fonts/Inter-VariableFont_opsz,wght.woff2',
+			path: '../../public/assets/fonts/Inter-VariableFont_opsz,wght.woff2',
 			style: 'normal',
 			weight: '100 1000',
 		},
 		{
-			path: '../../../public/assets/fonts/Inter-Italic-VariableFont_opsz,wght.woff2',
+			path: '../../public/assets/fonts/Inter-Italic-VariableFont_opsz,wght.woff2',
 			style: 'italic',
 			weight: '100 1000',
 		},
@@ -41,10 +42,18 @@ export default function RootLayout({
 			<NavProvider>
 				<body className={InterFont.className}>
 					<Header />
+					<aside className={"asideCon"}>
+						<SideBar/>
+					</aside>
 
 					<div className='main-body'>
 						{children}
 					</div>
+					<footer>
+						<div>
+							<p>© {new Date().getFullYear()} Catwalk to Freedom. All rights reserved.</p>
+						</div>
+					</footer>
 				</body>
 			</NavProvider>
 		

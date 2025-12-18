@@ -10,32 +10,70 @@
 	height: var(--navHeight);
 	background: var(--primary-color);
 	/* backdrop-filter: blur(8px); */
-	padding: 0 16px;
+	/* padding: 0 16px; */
 
 	/* animation */
 	transition: transform 0.38s cubic-bezier(0.25, 0.1, 0.25, 1),
 		opacity 0.28s ease;
 
 	&.navHidden {
+		
 		transform: translateY(-100%);
 	}
 
 	.navBar {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: auto 1fr;
 		grid-template-areas: 'left right';
-		grid-auto-columns: 1fr 1fr;
 		padding: 0px 16px;
 		height: 100%;
 		align-content: center;
+		max-width: var(--layout-max-width);
+		margin-inline: auto;
 
 		.burgerWrap {
 			grid-area: left;
 		}
 
-		.svgEl {
+		.navMenu {
+			display: none;
+			visibility: hidden;
+			
+			
+			.navLinks {
+				
+				ul {
+					height: 100%;
+					display: flex;
+					gap: 40px;
+					li {
+						display: inline-block;
+						height: 100%;
+						align-content: center;
+						
+					}
+					
+					a {
+                    	font-weight: 600;
+						
+                	}
+					a:hover {
+						color: var(--text-color-secondary);
+						transition: .3s;
+					}
+					li:has(a:hover) {
+						border-bottom: 2px solid var(--text-color-secondary);
+						padding-bottom: 4px;
+						transition: .3s;
+					}
+				}
+			}
+		}
+
+		.svgLogo {
 			grid-area: right;
 			align-self: center;
+			justify-self: end;
 		
 			svg {
 				height: var(--navSvg);
@@ -55,25 +93,71 @@
 	overflow: hidden;
 }
 
-@media (width >= 600px) {
+@media (width >= 769px) {
 	.navbarHeader {
 		.navBar {
 			grid-template-areas: 'right left';
+			padding: unset;
 
-			.svgEl {
+			.svgLogo {
 				margin-left: 10%;
+				justify-self: initial;
+				
+			}
+
+			.navMenu {
+				display: block;
+				visibility:visible;
+				display: grid;
+				grid-template-columns: 1fr auto;
+				justify-self: end;
+
+				.navLinks {
+					margin-right:90px
+				}
+
+				.donateBtnWrap {
+
+					button {
+						padding: 8px 16px;
+						background-color: var(--secondary-color);
+						border: none;
+						color: var(--text-color-secondary);
+						border-radius: 5px;
+						cursor: pointer;
+					}
+
+
+				}
+
+				
+			}
+
+		}
+	}
+}
+
+@media (width > 2580px) {
+	.navbarHeader {
+		.navBar {
+
+			.svgLogo {
+				margin-left: unset;
+			}
+
+			.navMenu {
+				.navLinks {
+					margin-right: 250px;
+				}
 			}
 		}
 	}
 }
 
-@media (width > 2400px) {
-	.navbarHeader {
-		.navBar {
 
-			.svgEl {
-				margin-inline: 20%;
-			}
-		}
+@media (600px <= width <= 2580px) {
+	.navMenu {
+		margin-right: 24px; /* Adjust right margin for better spacing on medium to large screens */
 	}
+					
 }

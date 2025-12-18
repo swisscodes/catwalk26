@@ -4,12 +4,14 @@ import CatWalk from '../svg/CatWalk';
 import styles from './header.module.css';
 import { useHideOnScroll } from 'src/hooks/useHideOnScroll';
 import Burger from './Burger';
-import {  use } from 'react';
+import { use } from 'react';
 import { NavContext } from 'src/context/Navcontext';
+import Link from 'next/link';
+import NavComponent from './NavComponent';
+
 
 export default function Header() {
-	const navToggle = use(NavContext)
-	
+	const navToggle = use(NavContext);
 
 	const hidden = useHideOnScroll({
 		threshold: 66, // starts hiding after 40px
@@ -25,9 +27,20 @@ export default function Header() {
 					{/* left this class unpurpose to remember this style also exist 
 					Con in class names means container*/}
 					<div className={styles.burgerCon}>
-						<Burger isOpen={navToggle?.isOpen} toggleBurger={navToggle?.toggleBurger} />
+						<Burger
+							isOpen={navToggle?.isOpen}
+							toggleBurger={navToggle?.toggleBurger}
+						/>
+						<div className={styles.navMenu}>
+							<div className={styles.navLinks}>
+								<NavComponent />
+							</div>
+							<div className={styles.donateBtnWrap}>
+								<button type='button'>DONATE</button>
+							</div>
+						</div>
 					</div>
-					<div className={styles.svgEl}>
+					<div className={styles.svgLogo}>
 						<CatWalk />
 					</div>
 				</nav>

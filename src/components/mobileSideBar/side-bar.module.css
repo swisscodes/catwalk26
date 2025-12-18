@@ -1,21 +1,53 @@
 .sideBarCon {
     position: fixed;
-    height: 100vh;
-    width: 75vw;
+    height: calc(100dvh - var(--navHeight));
+    width: 75dvw;
     background-color: var(--primary-color);
     z-index: 999;
-    transform: translateX(calc(-75vw - 1rem));
+    transform: translateX(calc(-100% - 1rem));
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    overflow: hidden;
+
+    .sideBar {
+        margin-top: 40px;
+        margin-left: 40px;
+
+        .sideNavLinks {
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                
+            }
+        }
+    }
+
+    .sideDonateBtnWrap {
+        position: absolute;
+        top: 90%;
+        margin-left: -40px;
+        width: 100%;
+        
+
+        button {
+            display: block;
+            width: 100%;
+        }
+    }
 }
 
 .sideBarConOpen {
    transform: translateX(-1rem);
-   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+   /* You usually add a shadow here to denote elevation */
+   box-shadow: 2px 0 4px rgba(0,0,0,0.1);
 }
 
 
-@media (width >= 600px) {
+@media (width >= 769px) {
     .sideBarCon {
         display: none;
+        /* Ensure it doesn't take up layout space or trigger events */
+        visibility: hidden; 
+        pointer-events: none;
     }
 }
