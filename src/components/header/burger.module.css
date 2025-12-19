@@ -47,7 +47,7 @@
 	}
 }
 
-@media (width >= 769px) {
+@media (width >= 900px) {
 	.svgBurgerBtn {
 		display: none;
 	}

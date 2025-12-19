@@ -6,7 +6,6 @@ import { useHideOnScroll } from 'src/hooks/useHideOnScroll';
 import Burger from './Burger';
 import { use } from 'react';
 import { NavContext } from 'src/context/Navcontext';
-import Link from 'next/link';
 import NavComponent from './NavComponent';
 
 

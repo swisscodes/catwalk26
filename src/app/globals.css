@@ -114,6 +114,7 @@ a {
 
 a, a:visited {
 	color: var(--text-color-secondary);
+	cursor: pointer;
 }
 
 .asideCon {

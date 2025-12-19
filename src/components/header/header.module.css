@@ -47,8 +47,7 @@
 					display: flex;
 					gap: 40px;
 					li {
-						display: inline-block;
-						height: 100%;
+						
 						align-content: center;
 						
 					}
@@ -93,7 +92,7 @@
 	overflow: hidden;
 }
 
-@media (width >= 769px) {
+@media (width >= 900px) {
 	.navbarHeader {
 		.navBar {
 			grid-template-areas: 'right left';
