@@ -1,0 +1,14 @@
+.activeLink {
+    font-weight: bold;
+    padding-inline: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    transition: .3s;
+}
+
+@media (width <= 900px) {
+    .activeLink {
+        padding-block: 12px;
+        padding-inline: unset;
+    }
+}
